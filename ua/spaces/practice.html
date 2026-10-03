@@ -1,12 +1,12 @@
 <!doctype html>
 
-<html lang="ru">
+<html lang="uk">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Индивидуальное сопровождение — PSYˣAXIS</title>
+    <title>Простори практики — PSYˣAXIS</title>
     <meta
-      content="Индивидуальное сопровождение PSYˣAXIS: кризисы, тревога, отношения, жизненные переходы и реорганизация внутренней архитектуры."
+      content="Групи, інтенсиви та практичні програми PSYˣAXIS."
       name="description"
     />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -53,15 +53,24 @@
         grid-template-columns: 1fr 1fr;
         gap: 52px;
       }
-      .info h2,
-      .form-card h2 {
-        font-family: "Playfair Display", serif;
-        font-size: 34px;
+      .programs {
+        display: grid;
+        gap: 18px;
       }
-      .info p,
-      .info li {
+      .program {
+        padding: 24px;
+        border: 1px solid rgba(212, 175, 55, 0.16);
+        border-radius: 20px;
+        background: #111;
+      }
+      .program h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        margin: 0 0 10px;
+      }
+      .program p {
         color: #c8bfb5;
-        line-height: 1.75;
+        line-height: 1.65;
       }
       .form-card {
         padding: 34px;
@@ -72,6 +81,10 @@
           rgba(24, 24, 24, 0.9),
           rgba(10, 10, 10, 0.98)
         );
+      }
+      .form-card h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 34px;
       }
       .field {
         margin-bottom: 18px;
@@ -95,7 +108,7 @@
         font: inherit;
       }
       .field textarea {
-        min-height: 130px;
+        min-height: 120px;
         resize: vertical;
       }
       .consent {
@@ -130,105 +143,124 @@
       }
     </style>
     <link
-      href="https://psy.maker.in.ua/spaces/individual.html"
+      href="https://psy.maker.in.ua/spaces/practice.html"
       hreflang="ru"
       rel="alternate"
     />
     <link
-      href="https://psy.maker.in.ua/ua/spaces/individual.html"
+      href="https://psy.maker.in.ua/ua/spaces/practice.html"
       hreflang="uk"
       rel="alternate"
     />
     <link
-      href="https://psy.maker.in.ua/spaces/individual.html"
+      href="https://psy.maker.in.ua/spaces/practice.html"
       hreflang="x-default"
       rel="alternate"
     />
   </head>
   <body>
     <header class="header">
-      <a class="logo" href="/">PSY<sup>x</sup>AXIS</a>
+      <a class="logo" href="/ua/">PSY<sup>x</sup>AXIS</a>
       <nav>
-        <a href="/#method">Метод</a><a href="/#spaces">Пространства</a
-        ><a href="/#research">Исследования</a>
+        <a href="/ua/#method">Метод</a><a href="/ua/#spaces">Простори</a
+        ><a href="/ua/#research">Дослідження</a>
       </nav>
-      <nav aria-label="Выбор языка" class="language-switcher">
-        <a
+      <nav aria-label="Вибір мови" class="language-switcher">
+        <a href="/spaces/practice.html" hreflang="ru" lang="ru">RU</a
+        ><a
           aria-current="page"
           class="active"
-          href="/spaces/individual.html"
-          hreflang="ru"
-          lang="ru"
-          >RU</a
-        ><a href="/ua/spaces/individual.html" hreflang="uk" lang="uk">UA</a>
+          href="/ua/spaces/practice.html"
+          hreflang="uk"
+          lang="uk"
+          >UA</a
+        >
       </nav>
     </header>
     <main class="page">
-      <a class="back" href="/#spaces">← Вернуться к пространствам</a>
+      <a class="back" href="/ua/#spaces">← Повернутися до просторів</a>
       <section class="hero-page">
-        <p class="eyebrow">Личное пространство</p>
-        <h1>Индивидуальное сопровождение</h1>
+        <p class="eyebrow">Спільний досвід</p>
+        <h1>Простори практики</h1>
         <p>
-          Пространство глубинной работы для людей, переживающих кризис, тревогу,
-          сложный жизненный переход или повторяющиеся внутренние сценарии.
+          Інтенсиви, групи та послідовні програми, у яких внутрішня зміна стає
+          живим досвідом.
         </p>
       </section>
       <section class="layout">
-        <div class="info">
-          <h2>С чем можно работать</h2>
-          <ul>
-            <li>личностный кризис и утрата опоры;</li>
-            <li>тревога и внутреннее напряжение;</li>
-            <li>отношения, семья и эмоциональные зависимости;</li>
-            <li>повторяющиеся жизненные сценарии;</li>
-            <li>поиск смысла и направления жизни.</li>
-          </ul>
-          <p>
-            После получения формы я свяжусь с вами по указанному контакту, чтобы
-            уточнить запрос и согласовать формат первой встречи.
-          </p>
+        <div class="programs">
+          <article class="program">
+            <h3>Психологічні інтенсиви</h3>
+            <p>
+              Зосереджена робота з кризою, Тінню, стосунками, сенсом і
+              перехідними станами.
+            </p>
+          </article>
+          <article class="program">
+            <h3>Тематичні програми</h3>
+            <p>
+              Цикли практик, об’єднані однією темою та розраховані на поступову
+              внутрішню зміну.
+            </p>
+          </article>
+          <article class="program">
+            <h3>Дослідницькі групи</h3>
+            <p>
+              Спільне дослідження психіки, свідомості та досвіду в просторі
+              присутності й зворотного зв’язку.
+            </p>
+          </article>
         </div>
         <div class="form-card">
-          <h2>Заявка на сопровождение</h2>
+          <h2>Заявка на участь</h2>
           <form action="https://formsubmit.co/vsd2411@ukr.net" method="POST">
             <input
               name="_subject"
               type="hidden"
-              value="PSYˣAXIS — заявка на индивидуальное сопровождение"
+              value="PSYˣAXIS — заявка на программу или группу"
             />
             <input
               name="_next"
               type="hidden"
-              value="https://psy.maker.in.ua/thanks.html"
+              value="https://psy.maker.in.ua/ua/thanks.html"
             />
-            <input name="_template" type="hidden" value="table" />
-            <input name="_honey" style="display: none" type="text" />
+            <input name="_template" type="hidden" value="table" /><input
+              name="_honey"
+              style="display: none"
+              type="text"
+            />
             <div class="field">
-              <label>Имя *</label><input name="Имя" required="" />
+              <label>Ім’я *</label><input name="Имя" required="" />
             </div>
             <div class="field">
               <label>Email *</label
               ><input name="Email" required="" type="email" />
             </div>
             <div class="field">
-              <label>Телефон или Telegram</label><input name="Контакт" />
+              <label>Телефон або Telegram</label><input name="Контакт" />
             </div>
             <div class="field">
-              <label>Что происходит сейчас? *</label
-              ><textarea name="Описание ситуации" required=""></textarea>
+              <label>Який формат вас цікавить? *</label
+              ><select name="Формат" required="">
+                <option value="">Оберіть</option>
+                <option>Психологічний інтенсив</option>
+                <option>Тематична програма</option>
+                <option>Дослідницька група</option>
+                <option>Хочу дізнатися про найближчі програми</option>
+              </select>
             </div>
             <div class="field">
-              <label>Что вы хотели бы изменить?</label
-              ><textarea name="Ожидаемое изменение"></textarea>
+              <label>Яка тема для вас зараз найважливіша?</label
+              ><textarea name="Тема запроса"></textarea>
             </div>
             <label class="consent"
               ><input required="" type="checkbox" />
               <span
-                >Я добровольно отправляю эти данные для связи по моему запросу и
-                согласен(на) на их обработку в рамках рассмотрения заявки.</span
+                >Я добровільно надсилаю ці дані для зв’язку щодо мого запиту та
+                погоджуюся на їх обробку в межах розгляду заявки.</span
               ></label
             >
-            <button class="submit" type="submit">Отправить заявку</button>
+            <button class="submit" type="submit">Надіслати заявку</button>
           </form>
         </div>
       </section>
@@ -242,16 +274,16 @@
           aria-labelledby="footer-contacts-title"
           class="footer-contacts"
         >
-          <h2 id="footer-contacts-title">Контакты</h2>
+          <h2 id="footer-contacts-title">Контакти</h2>
           <address>
-            <p><strong>ФОП:</strong> Овсянников Виталий Николаевич</p>
+            <p><strong>ФОП:</strong> Овсянников Віталій Миколайович</p>
             <p>
-              <strong>Адрес:</strong> Украина, г. Днепр, площадь Троицкая, 3/1
+              <strong>Адреса:</strong> Україна, м. Дніпро, площа Троїцька, 3/1
             </p>
             <p>
               <strong>Телефон:</strong>
               <a href="tel:+380507750289">+380 50 775 02 89</a
-              ><small> · доступен в мессенджерах</small>
+              ><small> · доступний у месенджерах</small>
             </p>
             <p>
               <strong>E-mail:</strong>
@@ -263,7 +295,7 @@
                 href="https://t.me/psihomaker"
                 rel="noopener noreferrer"
                 target="_blank"
-                >«Интегральная психология PSYˣAXIS»</a
+                >«Інтегральна психологія PSYˣAXIS»</a
               >
             </p>
           </address>
