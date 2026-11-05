@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link href="/styles.css?v=20260604-8" rel="stylesheet" />
+    <link href="/styles.css?v=20261105-1" rel="stylesheet" />
     <style>
       body {
         background: #090909;
@@ -230,18 +230,18 @@
               type="text"
             />
             <div class="field">
-              <label>Ім’я *</label><input name="Имя" required="" />
+              <label for="practice-name">Ім’я *</label><input id="practice-name" name="Имя" required="" />
             </div>
             <div class="field">
-              <label>Email *</label
-              ><input name="Email" required="" type="email" />
+              <label for="practice-email">Email *</label
+              ><input id="practice-email" name="Email" required="" type="email" />
             </div>
             <div class="field">
-              <label>Телефон або Telegram</label><input name="Контакт" />
+              <label for="practice-contact">Телефон або Telegram</label><input id="practice-contact" name="Контакт" />
             </div>
             <div class="field">
-              <label>Який формат вас цікавить? *</label
-              ><select name="Формат" required="">
+              <label for="practice-format">Який формат вас цікавить? *</label
+              ><select id="practice-format" name="Формат" required="">
                 <option value="">Оберіть</option>
                 <option>Психологічний інтенсив</option>
                 <option>Тематична програма</option>
@@ -250,11 +250,11 @@
               </select>
             </div>
             <div class="field">
-              <label>Яка тема для вас зараз найважливіша?</label
-              ><textarea name="Тема запроса"></textarea>
+              <label for="practice-topic">Яка тема для вас зараз найважливіша?</label
+              ><textarea id="practice-topic" name="Тема запроса"></textarea>
             </div>
             <label class="consent"
-              ><input required="" type="checkbox" />
+              ><input name="Согласие" required="" type="checkbox" value="Да" />
               <span
                 >Я добровільно надсилаю ці дані для зв’язку щодо мого запиту та
                 погоджуюся на їх обробку в межах розгляду заявки.</span
@@ -302,5 +302,6 @@
         </section>
       </div>
     </footer>
+    <script src="/site.js?v=20261105-1"></script>
   </body>
 </html>

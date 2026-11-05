@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link href="/styles.css?v=20260604-8" rel="stylesheet" />
+    <link href="/styles.css?v=20261105-1" rel="stylesheet" />
     <style>
       body {
         background: #090909;
@@ -227,18 +227,18 @@
               type="text"
             />
             <div class="field">
-              <label>Имя *</label><input name="Имя" required="" />
+              <label for="school-name">Имя *</label><input id="school-name" name="Имя" required="" />
             </div>
             <div class="field">
-              <label>Email *</label
-              ><input name="Email" required="" type="email" />
+              <label for="school-email">Email *</label
+              ><input id="school-email" name="Email" required="" type="email" />
             </div>
             <div class="field">
-              <label>Телефон или Telegram</label><input name="Контакт" />
+              <label for="school-contact">Телефон или Telegram</label><input id="school-contact" name="Контакт" />
             </div>
             <div class="field">
-              <label>Ваш профессиональный опыт *</label
-              ><select name="Опыт" required="">
+              <label for="school-experience">Ваш профессиональный опыт *</label
+              ><select id="school-experience" name="Опыт" required="">
                 <option value="">Выберите</option>
                 <option>Психолог / психотерапевт</option>
                 <option>Консультант / коуч</option>
@@ -248,15 +248,15 @@
               </select>
             </div>
             <div class="field">
-              <label>Почему вас заинтересовала Школа PSYˣAXIS?</label
-              ><textarea name="Мотивация"></textarea>
+              <label for="school-motivation">Почему вас заинтересовала Школа PSYˣAXIS?</label
+              ><textarea id="school-motivation" name="Мотивация"></textarea>
             </div>
             <div class="field">
-              <label>Что вы хотите развить как специалист?</label
-              ><textarea name="Цель обучения"></textarea>
+              <label for="school-goal">Что вы хотите развить как специалист?</label
+              ><textarea id="school-goal" name="Цель обучения"></textarea>
             </div>
             <label class="consent"
-              ><input required="" type="checkbox" />
+              ><input name="Согласие" required="" type="checkbox" value="Да" />
               <span
                 >Я добровольно отправляю эти данные для связи по моему запросу и
                 согласен(на) на их обработку в рамках рассмотрения заявки.</span
@@ -304,5 +304,6 @@
         </section>
       </div>
     </footer>
+    <script src="/site.js?v=20261105-1"></script>
   </body>
 </html>
