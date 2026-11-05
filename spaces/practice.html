@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link href="/styles.css?v=20260604-8" rel="stylesheet" />
+    <link href="/styles.css?v=20261105-1" rel="stylesheet" />
     <style>
       body {
         background: #090909;
@@ -159,6 +159,7 @@
     />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Перейти к основному содержимому</a>
     <header class="header">
       <a class="logo" href="/">PSY<sup>x</sup>AXIS</a>
       <nav>
@@ -176,7 +177,7 @@
         ><a href="/ua/spaces/practice.html" hreflang="uk" lang="uk">UA</a>
       </nav>
     </header>
-    <main class="page">
+    <main class="page" id="main-content">
       <a class="back" href="/#spaces">← Вернуться к пространствам</a>
       <section class="hero-page">
         <p class="eyebrow">Совместный опыт</p>
@@ -229,18 +230,18 @@
               type="text"
             />
             <div class="field">
-              <label>Имя *</label><input name="Имя" required="" />
+              <label for="practice-name">Имя *</label><input id="practice-name" name="Имя" required="" />
             </div>
             <div class="field">
-              <label>Email *</label
-              ><input name="Email" required="" type="email" />
+              <label for="practice-email">Email *</label
+              ><input id="practice-email" name="Email" required="" type="email" />
             </div>
             <div class="field">
-              <label>Телефон или Telegram</label><input name="Контакт" />
+              <label for="practice-contact">Телефон или Telegram</label><input id="practice-contact" name="Контакт" />
             </div>
             <div class="field">
-              <label>Какой формат вас интересует? *</label
-              ><select name="Формат" required="">
+              <label for="practice-format">Какой формат вас интересует? *</label
+              ><select id="practice-format" name="Формат" required="">
                 <option value="">Выберите</option>
                 <option>Психологический интенсив</option>
                 <option>Тематическая программа</option>
@@ -249,11 +250,11 @@
               </select>
             </div>
             <div class="field">
-              <label>Какая тема для вас сейчас наиболее важна?</label
-              ><textarea name="Тема запроса"></textarea>
+              <label for="practice-topic">Какая тема для вас сейчас наиболее важна?</label
+              ><textarea id="practice-topic" name="Тема запроса"></textarea>
             </div>
             <label class="consent"
-              ><input required="" type="checkbox" />
+              ><input name="Согласие" required="" type="checkbox" value="Да" />
               <span
                 >Я добровольно отправляю эти данные для связи по моему запросу и
                 согласен(на) на их обработку в рамках рассмотрения заявки.</span
@@ -301,5 +302,6 @@
         </section>
       </div>
     </footer>
+    <script src="/site.js?v=20261105-1"></script>
   </body>
 </html>
