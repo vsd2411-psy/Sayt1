@@ -1,16 +1,4 @@
 (() => {
-  const main = document.querySelector("main");
-  if (main) {
-    if (!main.id) main.id = "main-content";
-    const skipLink = document.createElement("a");
-    skipLink.className = "skip-link";
-    skipLink.href = `#${main.id}`;
-    skipLink.textContent = document.documentElement.lang === "uk"
-      ? "Перейти до основного вмісту"
-      : "Перейти к основному содержимому";
-    document.body.prepend(skipLink);
-  }
-
   const header = document.querySelector(".header");
   const primaryNav = header?.querySelector("nav:not(.language-switcher)");
   if (!header || !primaryNav) return;
@@ -38,7 +26,8 @@
     if (event.target.closest("a")) closeMenu();
   });
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    if (event.key === "Escape" && isOpen) {
       closeMenu();
       toggle.focus();
     }

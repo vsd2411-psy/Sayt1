@@ -17,6 +17,7 @@ class PageParser(HTMLParser):
         super().__init__()
         self.ids = set()
         self.links = []
+        self.language_links = set()
         self.resources = []
         self.lang = None
         self.title = False
@@ -30,7 +31,10 @@ class PageParser(HTMLParser):
         if tag == "meta" and data.get("name") == "description": self.description = True
         if tag == "h1": self.h1 += 1
         if data.get("id"): self.ids.add(data["id"])
-        if tag == "a" and data.get("href"): self.links.append(data["href"])
+        if tag == "a" and data.get("href"):
+            self.links.append(data["href"])
+            if data.get("hreflang") in {"ru", "uk"}:
+                self.language_links.add((data["hreflang"], data["href"]))
         if tag in {"img", "script", "link"}:
             value = data.get("src") or (data.get("href") if tag == "link" and data.get("rel") == "stylesheet" else None)
             if value: self.resources.append(value)
@@ -62,12 +66,43 @@ for page in HTML_FILES:
 
 for page, parser in pages.items():
     for raw in parser.links + parser.resources:
-        if urlsplit(raw).scheme or raw.startswith(("//", "#", "mailto:", "tel:")): continue
+        if raw.startswith("#"):
+            fragment = urlsplit(raw).fragment
+            if fragment and fragment not in parser.ids:
+                errors.append(f"{page.relative_to(ROOT)}: missing current-page fragment #{fragment}")
+            continue
+        if urlsplit(raw).scheme or raw.startswith(("//", "mailto:", "tel:")): continue
         target = local_target(page, raw)
         if target and not target.exists(): errors.append(f"{page.relative_to(ROOT)}: missing {raw}")
         fragment = urlsplit(raw).fragment
         if fragment and target in pages and fragment not in pages[target].ids:
             errors.append(f"{page.relative_to(ROOT)}: missing fragment #{fragment} in {target.relative_to(ROOT)}")
+
+# Check route parity and the internal RU/UA language-switch links. This validates
+# structure and destinations only; it does not assess translation quality.
+legacy_unpaired = {(ROOT / "psychology-meditation.html").resolve()}
+for page, parser in pages.items():
+    rel = page.relative_to(ROOT)
+    if rel.parts[0] == "ua":
+        ru_rel = Path(*rel.parts[1:])
+        ru_page = (ROOT / ru_rel).resolve()
+        uk_rel = rel
+    else:
+        if page in legacy_unpaired:
+            continue
+        ru_rel = rel
+        ru_page = page
+        uk_rel = Path("ua") / rel
+    uk_page = (ROOT / uk_rel).resolve()
+    if ru_page not in pages or uk_page not in pages:
+        errors.append(f"{rel}: missing RU/UA route counterpart")
+        continue
+    ru_href = "/" if ru_rel == Path("index.html") else f"/{ru_rel.as_posix()}"
+    uk_href = "/ua/" if uk_rel == Path("ua/index.html") else f"/{uk_rel.as_posix()}"
+    expected = {("ru", ru_href), ("uk", uk_href)}
+    missing = expected - parser.language_links
+    if missing:
+        errors.append(f"{rel}: incorrect or missing language links: {sorted(missing)}")
 
 css = (ROOT / "styles.css").read_text(encoding="utf-8")
 if css.count("{") != css.count("}"): errors.append("styles.css: unbalanced braces")
@@ -77,4 +112,8 @@ if re.search(r"styles\.css\?v=(?!20261105-1)", "\n".join(p.read_text(encoding="u
 if errors:
     print("\n".join(f"ERROR: {error}" for error in sorted(set(errors))))
     sys.exit(1)
-print(f"OK: checked {len(pages)} HTML pages, local links, resources, metadata and CSS structure")
+print(
+    f"OK: checked {len(pages)} HTML pages, current/cross-page fragments, "
+    "local resources, RU/UA route parity, language-link destinations, metadata "
+    "and basic CSS brace balance (not translation quality or full CSS validity)"
+)
